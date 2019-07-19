@@ -1,19 +1,27 @@
 <template>
   <div id="home">
-      <!-- home导航 -->
+      <!-- home导航头 -->
     <section class="homeHeader">
       <img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt="">
       <span class="icon-search"></span>
       <span class="input">搜索商品,共~~~~~款好物</span>
       <button>登录</button>
     </section>
-    <!-- 推荐 -->
-    <div class="home-nav">
-      <span>推荐</span>
-      <span>居家生活</span>
-      <span>服装鞋包</span>
-      <span>美食酒水</span>
-      <span>xxx</span>
+    <!-- 头部导航推荐 -->
+    <div>
+      <section class="homeNav" ref="homeNav">
+        <ul class="homeNavUl" >
+          <li class="navItem">推荐</li>
+          <li class="navItem">推荐</li>
+          <li class="navItem">推荐</li>
+          <li class="navItem">推荐</li>
+          <li class="navItem">推荐</li>
+          <li class="navItem">推荐</li>
+          <li class="navItem">推荐</li>
+          <li class="navItem">推荐</li>
+          <li class="navItem">推荐</li>
+        </ul>
+      </section>
     </div>
      <!-- 轮播图 -->
     <div class="homeSwiper swiper-container">
@@ -195,7 +203,7 @@
 <script type="text/ecmascript-6">
   import Swiper from 'swiper'
   import "swiper/dist/css/swiper.css"
-
+  import BScroll from 'better-scroll'
   import Split from '../../components/Split/Split.vue'
   import sixList from '../../components/sixList/sixList.vue'
   export default {
@@ -208,6 +216,12 @@
         pagination: {
           el: '.swiper-pagination',
         }
+      })
+
+      // 横向滑动的ul
+      this.navScroll = new BScroll('.homeNav', {
+        scrollX: true,
+        click: true
       })
     },
     components:{
@@ -256,11 +270,26 @@
         color red
         font-size 24px
   /* header下边 */
-    .home-nav
-      display flex
-      justify-content space-around
-      align-items center
-      font-size 28px
+    .homeNav
+      overflow hidden
+      position relative
+      .homeNavUl
+        width 1450px
+        font-size 28px
+        color #333
+        clearFix()
+        li
+          width 112px
+          height 66px
+          margin 0 19px
+          line-height 66px
+          float left
+          text-align center
+          &.active
+            border-bottom 6px solid $main
+            color $main
+
+
 
   /* 轮播图 */
     .homeSwiper
