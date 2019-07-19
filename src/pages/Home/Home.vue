@@ -75,7 +75,7 @@
         <div class="text">新品首发</div>
       </a>
     </div>
-     <div class="minSwiper-list">
+    <div class="minSwiper-list">
       <a href="">
         <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
         <div class="text">新品首发</div>
@@ -141,9 +141,53 @@
     <!-- 私人定制 -->
     <div class="private">
       <div class="text"> <h1>私人定制</h1></div>
-      <div class="private-swiper">
-
+      <div class="home-Swiper swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- 轮播每一页 -->
+            <div>
+            <img src="https://yanxuan.nosdn.127.net/271eb0b3d94e80579afdeb614cc240ad.png?imageView&quality=65&thumbnail=330x330" alt="">
+            <div><p>fsfsfs</p></div>
+            </div>
+            <div>
+            <img src="https://yanxuan.nosdn.127.net/00bd304b98650d5fe73b68635771ea4d.png?imageView&quality=65&thumbnail=330x330" alt="">
+            <div><p>fsfsfs</p></div>
+            </div>
+            <div>
+            <img src="https://yanxuan.nosdn.127.net/8a8eeefd81555eec03a673abbc24615a.png?imageView&quality=65&thumbnail=330x330" alt="">
+            <div><p>fsfsfs</p></div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- 轮播每二页 -->
+            <div>
+            <img src="https://yanxuan.nosdn.127.net/74d477f8ce98a22f4b5bc1ab6121e15e.png?imageView&quality=65&thumbnail=330x330" alt="">
+            <div><p>fsfsfs</p></div>
+            </div>
+            <div>
+            <img src="https://yanxuan.nosdn.127.net/67d6c15a456c31c427c9bcbc0bfc7eda.png?imageView&quality=65&thumbnail=330x330" alt="">
+            <div><p>fsfsfs</p></div>
+            </div>
+            <div>
+            <img src="https://yanxuan.nosdn.127.net/426b5d6ea40d94d3a4594405df3bdec5.png?imageView&thumbnail=216x216&quality=75" alt="">
+            <div><p>fsfsfs</p></div>
+            </div>
+          </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
       </div>
+
+    </div>
+
+    <!-- 限时购 -->
+    <div class="sixListWrap">
+      <split />
+      <h3>
+        <span class="left">限时购</span>
+        <span class="right">更多 ></span>
+      </h3>
+      <sixList/>
     </div>
   </div>
 </template>
@@ -152,17 +196,23 @@
   import Swiper from 'swiper'
   import "swiper/dist/css/swiper.css"
 
+  import Split from '../../components/Split/Split.vue'
+  import sixList from '../../components/sixList/sixList.vue'
   export default {
     /* 首页 */
     mounted () {
       var mySwiper = new Swiper ('.swiper-container', {
-    //direction: 'vertical', // 垂直切换选项
-    loop: true, // 循环模式选项
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination',
-      }
+        //direction: 'vertical', // 垂直切换选项
+        loop: true, // 循环模式选项
+        // 如果需要分页器
+        pagination: {
+          el: '.swiper-pagination',
+        }
       })
+    },
+    components:{
+      Split,
+      sixList
     }
   }
 </script>
@@ -211,6 +261,7 @@
       justify-content space-around
       align-items center
       font-size 28px
+
   /* 轮播图 */
     .homeSwiper
       img
@@ -268,13 +319,39 @@
     .private
       height 470px
       width 100%
-      background-color pink
+      //background-color pink
       .text
         height 100px
         width 100%
-        background-color blue
+        //background-color blue
         h1
           font-size 40px
           font-weight 700
           line-height 100px
+          margin-left 20px
+      .swiper-wrapper
+        .swiper-slide
+          height 370px
+          display flex
+          justify-content space-around
+          img
+            height 216px
+            width 216px
+            background #f5f5f5
+          p
+            padding-top 10px
+            text-align center
+  /* 六个图 */
+    .sixListWrap
+      h3
+        height 100px
+        line-height 100px
+        margin-top 20px
+        .left
+          font-size 32px
+          margin-left 50px
+        .right
+          font-size 28px
+          float right
+          margin-right 50px
 </style>
