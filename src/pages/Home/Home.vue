@@ -139,7 +139,12 @@
       </ul>
     </div>
     <!-- 私人定制 -->
-    
+    <div class="private">
+      <div class="text"> <h1>私人定制</h1></div>
+      <div class="private-swiper">
+
+      </div>
+    </div>
   </div>
 </template>
 
@@ -228,7 +233,7 @@
       .text
         color #333
         text-align center
-/* 广告 */
+  /* 广告 */
     .selection
       img
         width 100%
@@ -259,7 +264,17 @@
             float left
             width 150px
             height 150px
-
-
-
+   /* 私人定制轮播 */
+    .private
+      height 470px
+      width 100%
+      background-color pink
+      .text
+        height 100px
+        width 100%
+        background-color blue
+        h1
+          font-size 40px
+          font-weight 700
+          line-height 100px
 </style>
