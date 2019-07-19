@@ -1,23 +1,22 @@
 <template>
   <div id="home">
       <!-- home导航 -->
-      <section class="homeHeader">
+    <section class="homeHeader">
       <img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt="">
       <span class="icon-search"></span>
-      <span class="input">搜索商品,共......款好物</span>
+      <span class="input">搜索商品,共~~~~~款好物</span>
       <button>登录</button>
     </section>
     <!-- 推荐 -->
-    <section class="home-nav">
-      <ul class="home-list">
-        <li class="navItem">推荐</li>
-        <li>推荐</li>
-        <li>推荐</li>
-        <li>推荐</li>
-      </ul>
-    </section>
-    <!-- 轮播图 -->
-    <div class="firstSwiper swiper-container">
+    <div class="home-nav">
+      <span>推荐</span>
+      <span>居家生活</span>
+      <span>服装鞋包</span>
+      <span>美食酒水</span>
+      <span>xxx</span>
+    </div>
+     <!-- 轮播图 -->
+    <div class="homeSwiper swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="https://yanxuan.nosdn.127.net/f00ff1a6f9e244efe43c77ee8331318f.jpg?imageView&quality=75&thumbnail=750x0" alt="">
@@ -45,13 +44,102 @@
         </div>
       </div>
       <!-- 如果需要分页器 -->
-      <div class="swiper-pagination"></div>
+       <div class="swiper-pagination"></div>
     </div>
-    <div class="introduce">
+    <!-- 退货 -->
+    <div class="g-back">
       <span>网易自营品牌</span>
-      <span class="center">30天无忧退货</span>
+      <span>30天无忧退货</span>
       <span>48小时快速退款</span>
     </div>
+    <!-- 中间十个图片 -->
+    <div class="minSwiper-list">
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+    </div>
+     <div class="minSwiper-list">
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+      <a href="">
+        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
+        <div class="text">新品首发</div>
+      </a>
+    </div>
+    <!-- 广告 -->
+    <div class="selection">
+      <img src="https://yanxuan.nosdn.127.net/9e2248500f961bfe0e872027776b1e79.gif" alt="">
+    </div>
+    <!-- 四张图片 -->
+    <div class="fourList">
+      <ul>
+        <li>
+          <p class="big">是否是否是</p>
+          <p class="small">是否是否是</p>
+          <div>
+            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
+            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
+          </div>
+        </li>
+        <li>
+          <p class="big">是否是否是</p>
+          <p class="small">是否是否是</p>
+          <div>
+            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
+            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
+          </div>
+        </li>
+        <li>
+          <p class="big">是否是否是</p>
+          <p class="small">是否是否是</p>
+          <div>
+            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
+            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
+          </div>
+        </li>
+        <li>
+          <p class="big">是否是否是</p>
+          <p class="small">是否是否是</p>
+          <div>
+            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
+            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 私人定制 -->
+    
   </div>
 </template>
 
@@ -60,6 +148,7 @@
   import "swiper/dist/css/swiper.css"
 
   export default {
+    /* 首页 */
     mounted () {
       var mySwiper = new Swiper ('.swiper-container', {
     //direction: 'vertical', // 垂直切换选项
@@ -76,30 +165,24 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import '../../common/stylus/mixins.styl'
   #home
-    padding-bottom 105px
+    padding-bottom 100px
+  /* 头部 */
     .homeHeader
       height 88px
-      line-height 72px
-      padding 16px 30px
-      vertical-align middle
       display flex
+      justify-content space-around
       align-items center
-      position fixed
-      top 0
-      left 0
-      z-index 30
       background-color #fff
       img
         height 40px
       .input
         height 56px
         line-height 56px
-        width 486px
+        width 450px
         font-size 28px
         background-color #ededed
-        margin 0 8px 0 10px
         text-align center
-        border-radius 2px
+        border-radius 10px
         color #666
         text-indent 28px
       .icon-search
@@ -107,32 +190,76 @@
         height 28px
         background url("//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-553dba3aff.png") no-repeat
         position absolute
-        left 230px
+        left 200px
         top 30px
       button
         width 78px
         height 44px
-        border 1px solid $main
-        color $main
+        border 1px solid red
+        border-radius 8px
         background-color #fff
+        color red
         font-size 24px
-      //推荐
+  /* header下边 */
     .home-nav
       display flex
-      flex-direction row
-      overflow hidden
-      position relative
-      margin-top 88px
-      .home-list
-        display flex
-        flex-direction row
-        font-size 28px
-        color #333
-      //home轮播图
-    .firstSwiper
-      width 100%
-      height 370px
+      justify-content space-around
+      align-items center
+      font-size 28px
+  /* 轮播图 */
+    .homeSwiper
       img
         width 100%
-        height 100%
+  /* 退货 */
+    .g-back
+      display flex
+      justify-content space-around
+      align-items center
+      font-size 28px
+  /* 中间十张图 */
+    .minSwiper-list
+      display flex
+      justify-content space-between
+      a
+        text-decoration none
+      img
+        height 128px
+        width 128px
+      .text
+        color #333
+        text-align center
+/* 广告 */
+    .selection
+      img
+        width 100%
+  /* 四张图片 */
+    .fourList
+      margin-top 40px
+      ul
+        display flex
+        flex-wrap wrap
+        justify-content center
+        li
+          width 343px
+          height 260px
+          padding 20px 0 0 20px
+          margin 4px 0 0 4px
+          background-color #f5f5f5
+        .big
+          font-size 32px
+          color #333
+          padding-left 10px
+        .small
+          font-size 24px
+          color #7f7f7f
+          margin 10px 0
+          padding-left 10px
+        div
+          img
+            float left
+            width 150px
+            height 150px
+
+
+
 </style>

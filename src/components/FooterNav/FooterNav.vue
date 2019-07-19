@@ -1,5 +1,5 @@
 <template>
-  <div id="footer-tab" class="border-1px">
+  <div id="footer-tab" >
     <div class="tab-item" :class="{on: $route.path==='/home'}" @click="goTo('/home')">
       <span><i class="iconfont icon-icon_home"></i></span>
       <span class="text">首页</span>
@@ -42,7 +42,6 @@ export default {
     box-sizing border-box
     padding 12px
     background-color #fff
-    top-border-1px(#666)
     position fixed
     left 0
     bottom 0
@@ -54,10 +53,9 @@ export default {
       flex-direction column
       align-items center
       &.on
-         color red
+        color red
       .iconfont
         font-size 40px
       .text
         font-size 30px
-        color #666
 </style>
