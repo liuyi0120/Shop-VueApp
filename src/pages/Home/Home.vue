@@ -187,7 +187,6 @@
       </div>
 
     </div>
-
     <!-- 限时购 -->
     <div class="sixListWrap">
       <split />
@@ -344,6 +343,7 @@
             float left
             width 150px
             height 150px
+
    /* 私人定制轮播 */
     .private
       height 470px

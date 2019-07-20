@@ -5,13 +5,79 @@
       <span class="icon-search"></span>
       <span class="input">搜索商品,共~~~~~款好物</span>
     </section>
+
+    <div class="classify-list" >
+        <!-- 左测 -->
+      <div class="classify-left">
+        <ul>
+          <li>夏凉专区</li>
+          <li>夏凉专区</li>
+          <li>夏凉专区</li>
+          <li>夏凉专区</li>
+          <li>夏凉专区</li>
+          <li>夏凉专区</li>
+          <li>夏凉专区</li>
+          <li>夏凉专区</li>
+        </ul>
+      </div>
+      <!-- 右侧 -->
+      <div class="classify-right">
+        <div>
+          <img src="https://yanxuan.nosdn.127.net/cb225335d4a438564040f00b448e8db8.png?imageView&thumbnail=0x196" alt="">
+          <ul>
+            <li>
+              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
+              <div>
+                <span class="now">员工精选好货</span>
+              </div>
+            </li>
+            <li>
+              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
+              <div>
+                <span class="now">员工精选好货</span>
+              </div>
+            </li>
+            <li>
+              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
+              <div>
+                <span class="now">员工精选好货</span>
+              </div>
+            </li>
+            <li>
+              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
+              <div>
+                <span class="now">员工精选好货</span>
+              </div>
+            </li>
+            <li>
+              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
+              <div>
+                <span class="now">员工精选好货</span>
+              </div>
+            </li>
+            <li>
+              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
+              <div>
+                <span class="now">员工精选好货</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import BScroll from 'better-scroll'
   export default {
     /* 分类 */
+    mounted (){
+
+    },
   }
+
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
@@ -50,9 +116,40 @@
         position absolute
         left 200px
         top 30px
+  /* 分类列表 */
+    .classify-list
+      display flex
+      padding-top 88px
+      /* 左侧 */
+      .classify-left
+        height 1140px
+        ul
+          width 162px
+          li
+            height 50px
+            color #7e8c8d
+            text-align center
+            font-size 30px
+            margin-top 40px
+            /* 右侧 */
+      .classify-right
+        width 588px
+        height 1140px
+        padding 0px 30px 100px 30px
 
-
-
-
-
+        ul
+          display flex
+          flex-wrap wrap
+          margin-top 20px
+          li
+            width 144px
+            height 216px
+            display flex
+            flex-direction column
+            img
+              height 144px
+              width 144px
+            span
+              font-size 28px
+              text-align center
 </style>
