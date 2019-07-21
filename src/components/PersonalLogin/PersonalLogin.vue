@@ -1,6 +1,6 @@
 <template>
   <div id="personal">
-    <div class="header">
+   <!--  <div class="header">
       <span class="left" @click="toHome"><i class="iconfont icon-icon_home"></i></span>
       <div>
         <div class="center"><img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt=""></div>
@@ -9,21 +9,18 @@
         <span><i class="iconfont icon-iconset0157"></i></span>
         <span @click="toShop"><i class="iconfont icon-gouwuche"></i></span>
       </div>
-    </div>
-    <PhoneLigin v-if="isLogin === 1"/>
-    <MailLogin v-if="isLogin === 2"/>
-    <personalLogin v-if="isLogin === 0"/>
-    <!-- <div class="img">
+    </div> -->
+    <div class="img">
       <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
     </div>
     <div class="login">
       <div class="phone">
         <span><i class="iconfont icon-44"></i></span>
-        <button class="phone-btn">手机登录</button>
+        <button class="phone-btn" @click="phoneLogin">手机登录</button>
       </div>
       <div class="mail">
         <span><i class="iconfont icon-qianjinxiayige"></i></span>
-        <button class="mail-btn">邮箱登录</button>
+        <button class="mail-btn" @click="emailLogin">邮箱登录</button>
       </div>
       <div class="loginPhone">
         <span>手机号快速注册</span>
@@ -46,15 +43,14 @@
         <i class="iconfont icon-weibo"></i>
         <span>微博</span>
       </div>
-    </footer> -->
+    </footer>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import PhoneLigin from '../../components/PhoneLigin/PhoneLigin'
   import MailLogin from '../../components/MailLogin/MailLogin'
-  import personalLogin from '../../components/PersonalLogin/PersonalLogin'
-  import {mapState} from 'vuex'
+
   export default {
     methods:{
       /*去主页 */
@@ -63,15 +59,17 @@
       },
       toShop(){
         this.$router.push('/shop')
+      },
+      phoneLogin(){
+        this.$store.dispatch('phoneLoginaction')
+      },
+       emailLogin(){
+        this.$store.dispatch('emailLoginaction')
       }
     },
     components:{
       PhoneLigin,
-      MailLogin,
-      personalLogin
-    },
-    computed:{
-      ...mapState(['isLogin'])
+      MailLogin
     }
   }
 </script>
