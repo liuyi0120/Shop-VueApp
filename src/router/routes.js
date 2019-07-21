@@ -8,23 +8,38 @@ import Shitu from '../pages/shitu/Shitu.vue'
 export default [
   {
     path: '/home',
-    component: Home
+    component: Home,
+    meta:{
+      isShow:true
+    }
   },
   {
     path: '/classify',
-    component: Classify
+    component: Classify,
+    meta:{
+      isShow:true
+    }
   },
   {
     path: '/personal',
-    component: Personal
+    component: Personal,
+    meta:{
+      isShow:false
+    }
   },
   {
     path: '/shitu',
-    component: Shitu
+    component: Shitu,
+    meta:{
+      isShow:true
+    }
   },
   {
     path: '/shop',
-    component: Shop
+    component: Shop,
+    meta:{
+      isShow:true
+    }
   },
   {
     path: '/',

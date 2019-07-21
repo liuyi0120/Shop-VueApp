@@ -2,10 +2,10 @@
   <div id="home">
       <!-- home导航头 -->
     <section class="homeHeader">
-      <img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt="">
+      <img @click="toHome" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt="">
       <span class="icon-search"></span>
       <span class="input">搜索商品,共~~~~~款好物</span>
-      <button>登录</button>
+      <button @click="toPersonal">登录</button>
     </section>
     <!-- 头部导航推荐 -->
     <div>
@@ -207,6 +207,14 @@
   import sixList from '../../components/sixList/sixList.vue'
   export default {
     /* 首页 */
+    methods:{
+      toPersonal(){
+        this.$router.push('/personal')
+      },
+      toHome(){
+        this.$router.push('/home')
+      }
+    },
     mounted () {
       var mySwiper = new Swiper ('.swiper-container', {
         //direction: 'vertical', // 垂直切换选项

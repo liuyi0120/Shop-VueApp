@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <FooterNav/>
+    <FooterNav v-show="$route.meta.isShow"/>
   </div>
 
 </template>
@@ -16,5 +16,5 @@ import FooterNav from './components/FooterNav/FooterNav'
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
- 
+
 </style>
