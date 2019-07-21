@@ -28,6 +28,22 @@
       </div>
 
     </div>
+    <footer>
+      <div>
+        <i class="iconfont icon-weixin"></i>
+        <span>微信</span>
+        <span class="split">|</span>
+      </div>
+      <div>
+        <i class="iconfont icon-qq"></i>
+        <span>QQ</span>
+        <span class="split">|</span>
+      </div>
+      <div>
+        <i class="iconfont icon-weibo"></i>
+        <span>微博</span>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -66,14 +82,15 @@
       height 410px
       line-height 410px
       text-align center
-      padding-top 100px
+      padding-top 50px
       padding-bottom 100px
+      border-top 3px solid #d9d9dd
       img
         width 254px
         height  75px
     .login
       text-align center
-      padding 100px 0
+      //padding 100px 0
       margin-bottom 400px
       .phone
         .iconfont
@@ -110,5 +127,20 @@
         font-size 34px
         .iconfont
           font-size 34px
-
+    footer
+      display flex
+      justify-content center
+      margin-top 375px
+      padding-bottom 85px
+      div
+        i
+          font-size 36px
+          color #7f7f7f
+        span
+          font-size 30px
+          color #7f7f7f
+          margin-right 30px
+        .split
+          font-weight bold
+          font-size 30px
 </style>
