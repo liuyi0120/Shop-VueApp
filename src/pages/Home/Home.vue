@@ -4,25 +4,37 @@
     <section class="homeHeader">
       <img @click="toHome" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt="">
       <span class="icon-search"></span>
-      <span class="input">搜索商品,共~~~~~款好物</span>
+      <span class="input" @click="toSearch">搜索商品,共~~~~~款好物</span>
       <button @click="toPersonal">登录</button>
     </section>
-    <!-- 头部导航推荐 -->
+    <!-- 头部导航推荐静 -->
     <div>
-      <section class="homeNav" ref="homeNav">
-        <ul class="homeNavUl" >
-          <li class="navItem">推荐</li>
-          <li class="navItem">推荐</li>
-          <li class="navItem">推荐</li>
-          <li class="navItem">推荐</li>
-          <li class="navItem">推荐</li>
-          <li class="navItem">推荐</li>
-          <li class="navItem">推荐</li>
-          <li class="navItem">推荐</li>
-          <li class="navItem">推荐</li>
+      <section class="homeNav">
+        <ul class="homeNavUl">
+          <li class="navItem" >推荐</li>
+          <li class="navItem" >推荐</li>
+          <li class="navItem" >推荐</li>
+          <li class="navItem" >推荐</li>
+        </ul>
+        <div class="opcityBox"></div>
+        <div class="arrow" @click="handleArrow">
+          <img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/arrow-down-3-799ded53ea.png"
+               alt="">
+        </div>
+      </section>
+      <!-- 点击按钮显示 -->
+      <section class="all" v-show="isShow">
+        <div class="allTitle">全部频道</div>
+        <ul class="allUl">
+          <li class="allItem" v-for="(item,index) in navListData" :key="index"
+              :class="index===newIndex?'allItem active':'allItem'">{{item}}</li>
         </ul>
       </section>
+      <!-- 遮罩层 -->
+      <section class="wrap" v-show="isShow" @click="handleArrow"></section>
+
     </div>
+
      <!-- 轮播图 -->
     <div class="homeSwiper swiper-container">
       <div class="swiper-wrapper">
@@ -207,12 +219,27 @@
   import sixList from '../../components/sixList/sixList.vue'
   export default {
     /* 首页 */
+    data () {
+      return {
+        isShow: false,
+        isArrow: true,// true箭头向下
+        newIndex: 0,
+        navListData: ['推荐','居家生活','服饰鞋包','美食酒水','个护清洁','母婴亲子','运动旅行','数码家电','全球特色']// 导航的数据
+      }
+    },
     methods:{
       toPersonal(){
         this.$router.push('/personal')
       },
       toHome(){
         this.$router.push('/home')
+      },
+      handleArrow () {
+        this.isShow = !this.isShow
+        this.isArrow = !this.isArrow
+      },
+      toSearch(){
+        this.$router.push('/search')
       }
     },
     mounted () {
@@ -280,6 +307,7 @@
     .homeNav
       overflow hidden
       position relative
+      //margin-top 88px
       .homeNavUl
         width 1450px
         font-size 28px
@@ -295,7 +323,64 @@
           &.active
             border-bottom 6px solid $main
             color $main
-
+      .opcityBox
+        width 60px
+        height 60px
+        z-index 15
+        position absolute
+        top 0
+        right 100px
+        background linear-gradient(90deg,rgba(255,255,255,0) 0,#fff 100%)
+      .arrow
+        width 100px
+        height 60px
+        text-align center
+        padding-top 15px
+        background-color #fff
+        z-index 15
+        position absolute
+        top 0
+        right 0
+        transition all 1s
+        .downArrow
+          transform rotate(0deg)
+          transition all 0.5s
+        .upArrow
+          transform rotate(180deg)
+          transition all 0.5s
+  /* 遮罩显示 */
+    .all
+      background-color #fff
+      height 372px
+      width 100%
+      color #333
+      top-border-1px(#eee)
+      position absolute
+      top 72px
+      left 0
+      z-index 10
+      .allTitle
+        width 100%
+        height 60px
+        line-height 60px
+        font-size  28px
+        padding-left 30px
+      .allUl
+        padding 24px 0 0 0
+        li
+          width 150px
+          height 56px
+          line-height 56px
+          text-align center
+          border 1px solid #ccc
+          border-radius 4px
+          float left
+          font 24px
+          margin 0 0 40px 30px
+          background-color #fafafa
+          &.active
+            color $main
+            border-color $main
 
 
   /* 轮播图 */

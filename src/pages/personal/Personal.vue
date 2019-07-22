@@ -6,7 +6,7 @@
         <div class="center"><img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-a90bdaae6b.png" alt=""></div>
       </div>
       <div class="right">
-        <span><i class="iconfont icon-iconset0157"></i></span>
+        <span @click="toSearch"><i class="iconfont icon-iconset0157"></i></span>
         <span @click="toShop"><i class="iconfont icon-gouwuche"></i></span>
       </div>
     </div>
@@ -63,6 +63,9 @@
       },
       toShop(){
         this.$router.push('/shop')
+      },
+      toSearch(){
+        this.$router.push('/search')
       }
     },
     components:{

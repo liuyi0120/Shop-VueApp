@@ -19,7 +19,7 @@
         <span>登录</span>
       </div>
       <div class="email_login">
-        <span>其他登录方式</span>
+        <span @click="backHistory">其他登录方式</span>
       </div>
       <div class="email_register">快速注册</div>
     </div>
@@ -28,6 +28,11 @@
 <script>
   import {mapState} from 'vuex'
   export default {
+    methods:{
+      backHistory(){
+        this.$router.go(0)
+      }
+    }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>

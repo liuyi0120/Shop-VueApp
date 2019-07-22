@@ -14,12 +14,18 @@
       <div class="centent">
         <img src="https://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noCart-a8fe3f12e5.png" alt="">
         <span>去添加点什么</span>
-        <button class="btn">登录</button>
+        <button class="btn" @click="toPersonal">登录</button>
       </div>
     </div>
 </template>
 <script type="text/ecmascript-6">
-  export default {}
+  export default {
+    methods:{
+      toPersonal(){
+        this.$router.push('/personal')
+      }
+    }
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   #shop

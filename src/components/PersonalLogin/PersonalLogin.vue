@@ -19,7 +19,7 @@
         <button class="phone-btn" @click="phoneLogin">手机登录</button>
       </div>
       <div class="mail">
-        <span><i class="iconfont icon-qianjinxiayige"></i></span>
+        <span><i class="iconfont icon-youxiang"></i></span>
         <button class="mail-btn" @click="emailLogin">邮箱登录</button>
       </div>
       <div class="loginPhone">

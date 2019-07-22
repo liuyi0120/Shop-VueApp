@@ -8,7 +8,7 @@
       <span><i class="iconfont icon-iconfl"></i></span>
       <span>分类</span>
     </div>
-    <div class="tab-item" :class="{on: $route.path==='/shitu'}" @click="goTo('/shitu')">
+    <div class="tab-item" :class="{on: $route.path==='/shiwu'}" @click="goTo('/shiwu')">
       <span><i class="iconfont icon-quanchangniaokantu"></i></span>
       <span>识物</span>
     </div>

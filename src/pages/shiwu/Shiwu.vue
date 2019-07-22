@@ -7,7 +7,7 @@
         <span class="center2">甄选家</span>
       </div>
       <div class="right">
-        <span><i class="iconfont icon-iconset0157"></i></span>
+        <span @click="toSearch"><i class="iconfont icon-iconset0157"></i></span>
         <span @click="toShop"><i class="iconfont icon-gouwuche"></i></span>
       </div>
     </div>
@@ -46,7 +46,7 @@
             <span>网易：小周</span>
           </div>
           <div class="text"> <span>一次吃遍8种坚果，零食之王要这样吃才对</span>  </div>
-          <div>
+          <div class="see">
             <i class="iconfont icon-chakanguo"></i>
             <span>4567人看过</span>
           </div>
@@ -68,6 +68,9 @@
       },
       toShop(){
         this.$router.push('/shop')
+      },
+      toSearch(){
+        this.$router.push('/search')
       }
     },
     mounted(){
@@ -137,18 +140,22 @@
       border-top 20px solid #d9d9dd
       .xinwen-list
         margin-top 20px
-
         .xiaozhou
           display flex
           align-items center
           img
             border-radius 40px
         .text
-          font-size 30px
+          font-size 40px
+          margin-top 40px
+        .see
+          margin-top 100px
       .img
         margin-top 20px
-        height 400px
+        height 360px
         width 400px
-
+        img
+          height 350px
+          border-radius 20px
 
 </style>

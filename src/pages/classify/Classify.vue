@@ -1,7 +1,7 @@
 <template>
   <div id="classify">
     <!-- 头部搜索框 -->
-    <section class="classifyHeader">
+    <section class="classifyHeader"  @click="toSearch">
       <span class="icon-search"></span>
       <span class="input">搜索商品,共~~~~~款好物</span>
     </section>
@@ -73,9 +73,11 @@
   import BScroll from 'better-scroll'
   export default {
     /* 分类 */
-    mounted (){
-
-    },
+    methods:{
+      toSearch(){
+        this.$router.push('/search')
+      }
+    }
   }
 
 </script>

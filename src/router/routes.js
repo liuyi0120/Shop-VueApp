@@ -2,7 +2,8 @@ import Home from '../pages/Home/Home.vue'
 import Classify from '../pages/classify/Classify.vue'
 import Personal from '../pages/personal/Personal.vue'
 import Shop from '../pages/shop/Shop.vue'
-import Shitu from '../pages/shitu/Shitu.vue'
+import Shiwu from '../pages/shiwu/Shiwu.vue'
+import Search from '../pages/Search/Search.vue'
 
 
 export default [
@@ -18,7 +19,11 @@ export default [
     component: Classify,
     meta:{
       isShow:true
-    }
+    },
+  },
+  {
+    path:'/search',
+    component:Search
   },
   {
     path: '/personal',
@@ -28,8 +33,8 @@ export default [
     }
   },
   {
-    path: '/shitu',
-    component: Shitu,
+    path: '/shiwu',
+    component: Shiwu,
     meta:{
       isShow:true
     }
@@ -43,6 +48,6 @@ export default [
   },
   {
     path: '/',
-    redirect: '/classify'
+    redirect: '/home'
   }
 ]

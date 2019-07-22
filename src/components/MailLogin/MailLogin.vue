@@ -1,7 +1,7 @@
 <template>
   <div id="loginMailWrap">
     <div class="top_login">
-      
+
       <label class="input_phone">
         <input type="text" placeholder="邮箱账号" />
       </label>
@@ -17,14 +17,18 @@
         <span>登录</span>
       </div>
       <div class="email_login">
-        <span>其他账号登录</span>
+        <span @click="backHistory">其他账号登录</span>
       </div>
     </div>
   </div>
 </template>
 <script>
   export default {
-
+    methods:{
+      backHistory(){
+        this.$router.go(0)
+      }
+    }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
