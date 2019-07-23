@@ -68,6 +68,7 @@
         this.$router.push('/search')
       }
     },
+    
     components:{
       PhoneLigin,
       MailLogin,

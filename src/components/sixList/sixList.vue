@@ -1,54 +1,22 @@
 <template>
   <div id="sixWrap">
     <ul>
-      <li>
-        <img src="https://yanxuan.nosdn.127.net/227848eddc10ee787cbccb6f315fb963.png?imageView&thumbnail=216x216&quality=75" alt="">
+      <li v-for="(items,index) in sixList" :key="index">
+        <img :src="items.picUrl" alt="">
         <div>
-          <span class="now">¥12414</span>
-          <del class="current">¥22342</del>
+          <span class="now">${{items.activityPrice}}</span>
+          <del class="current">{{items.originPrice}}</del>
         </div>
       </li>
-       <li>
-        <img src="https://yanxuan.nosdn.127.net/227848eddc10ee787cbccb6f315fb963.png?imageView&thumbnail=216x216&quality=75" alt="">
-        <div>
-          <span class="now">¥12414</span>
-          <del class="current">¥22342</del>
-        </div>
-      </li>
-       <li>
-        <img src="https://yanxuan.nosdn.127.net/227848eddc10ee787cbccb6f315fb963.png?imageView&thumbnail=216x216&quality=75" alt="">
-        <div>
-          <span class="now">¥12414</span>
-          <del class="current">¥22342</del>
-        </div>
-      </li>
-       <li>
-        <img src="https://yanxuan.nosdn.127.net/227848eddc10ee787cbccb6f315fb963.png?imageView&thumbnail=216x216&quality=75" alt="">
-        <div>
-          <span class="now">¥12414</span>
-          <del class="current">¥22342</del>
-        </div>
-      </li>
-       <li>
-        <img src="https://yanxuan.nosdn.127.net/227848eddc10ee787cbccb6f315fb963.png?imageView&thumbnail=216x216&quality=75" alt="">
-        <div>
-          <span class="now">¥12414</span>
-          <del class="current">¥22342</del>
-        </div>
-      </li>
-       <li>
-        <img src="https://yanxuan.nosdn.127.net/227848eddc10ee787cbccb6f315fb963.png?imageView&thumbnail=216x216&quality=75" alt="">
-        <div>
-          <span class="now">¥12414</span>
-          <del class="current">¥22342</del>
-        </div>
-      </li>
+
     </ul>
   </div>
 </template>
 <script>
   export default {
-
+    props:{
+      sixList:Array
+    }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>

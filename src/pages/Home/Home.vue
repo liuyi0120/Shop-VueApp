@@ -11,10 +11,7 @@
     <div>
       <section class="homeNav">
         <ul class="homeNavUl">
-          <li class="navItem" >推荐</li>
-          <li class="navItem" >推荐</li>
-          <li class="navItem" >推荐</li>
-          <li class="navItem" >推荐</li>
+          <li class="navItem" v-for="(items,index) in navListData" :key="index">{{items}}</li>
         </ul>
         <div class="opcityBox"></div>
         <div class="arrow" @click="handleArrow">
@@ -73,132 +70,44 @@
       <span>48小时快速退款</span>
     </div>
     <!-- 中间十个图片 -->
-    <div class="minSwiper-list">
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-    </div>
-    <div class="minSwiper-list">
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-      <a href="">
-        <div><img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt=""></div>
-        <div class="text">新品首发</div>
-      </a>
-    </div>
-    <!-- 广告 -->
-    <div class="selection">
-      <img src="https://yanxuan.nosdn.127.net/9e2248500f961bfe0e872027776b1e79.gif" alt="">
-    </div>
+    <section class="categoryList">
+      <ul>
+        <li v-for="(item,index) in homeData.kingKongModule.kingKongList" :key="index">
+          <img :src="item.picUrl" alt="">
+          <span>{{item.text}}</span>
+        </li>
+      </ul>
+    </section>
+    <img src="https://yanxuan.nosdn.127.net/df012027a9bd3c0b0e5779c11b814180.png" alt="">
+
     <!-- 四张图片 -->
     <div class="fourList">
       <ul>
-        <li>
-          <p class="big">是否是否是</p>
-          <p class="small">是否是否是</p>
+        <li v-for="(item,index) in homeData.sceneLightShoppingGuideModule" :key="index">
+          <p class="big">{{item.styleItem.title}}</p>
+          <p class="small">{{item.styleItem.desc}}</p>
           <div>
-            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
-            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
-          </div>
-        </li>
-        <li>
-          <p class="big">是否是否是</p>
-          <p class="small">是否是否是</p>
-          <div>
-            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
-            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
-          </div>
-        </li>
-        <li>
-          <p class="big">是否是否是</p>
-          <p class="small">是否是否是</p>
-          <div>
-            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
-            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
-          </div>
-        </li>
-        <li>
-          <p class="big">是否是否是</p>
-          <p class="small">是否是否是</p>
-          <div>
-            <img src="https://yanxuan.nosdn.127.net/1eecf74b769af3ed4c7817aeb5d6bb2b.png?imageView&thumbnail=150x150&quality=75" alt="">
-            <img src="https://yanxuan.nosdn.127.net/f8ab1da43385ce39549272c1571f6397.png?imageView&thumbnail=150x150&quality=75" alt="">
+            <img v-for="(pic,index) in item.styleItem.picUrlList" :src="pic" alt="" :key="index">
           </div>
         </li>
       </ul>
     </div>
     <!-- 私人定制 -->
-    <div class="private">
-      <div class="text"> <h1>私人定制</h1></div>
-      <div class="home-Swiper swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <!-- 轮播每一页 -->
-            <div>
-            <img src="https://yanxuan.nosdn.127.net/271eb0b3d94e80579afdeb614cc240ad.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div><p>fsfsfs</p></div>
+    <section class="personalTailor">
+      <h3>私人定制</h3>
+      <div class="swiper-container personalSwiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide" v-for="(item,index) in personalTailorList" :key="index">
+            <div v-for="(goods,index) in item" :key="index">
+              <img :src="goods.primaryPicUrl" alt="">
+              <span>{{goods.name}}<i>¥{{goods.counterPrice}}</i></span>
             </div>
-            <div>
-            <img src="https://yanxuan.nosdn.127.net/00bd304b98650d5fe73b68635771ea4d.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div><p>fsfsfs</p></div>
-            </div>
-            <div>
-            <img src="https://yanxuan.nosdn.127.net/8a8eeefd81555eec03a673abbc24615a.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div><p>fsfsfs</p></div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <!-- 轮播每二页 -->
-            <div>
-            <img src="https://yanxuan.nosdn.127.net/74d477f8ce98a22f4b5bc1ab6121e15e.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div><p>fsfsfs</p></div>
-            </div>
-            <div>
-            <img src="https://yanxuan.nosdn.127.net/67d6c15a456c31c427c9bcbc0bfc7eda.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div><p>fsfsfs</p></div>
-            </div>
-            <div>
-            <img src="https://yanxuan.nosdn.127.net/426b5d6ea40d94d3a4594405df3bdec5.png?imageView&thumbnail=216x216&quality=75" alt="">
-            <div><p>fsfsfs</p></div>
-            </div>
-          </div>
-        </div>
+          </li>
+        </ul>
         <!-- 如果需要分页器 -->
         <div class="swiper-pagination"></div>
       </div>
-
-    </div>
+    </section>
     <!-- 限时购 -->
     <div class="sixListWrap">
       <split />
@@ -206,7 +115,7 @@
         <span class="left">限时购</span>
         <span class="right">更多 ></span>
       </h3>
-      <sixList/>
+      <sixList :sixList="homeData.flashSaleModule.itemList"/>
     </div>
   </div>
 </template>
@@ -217,6 +126,8 @@
   import BScroll from 'better-scroll'
   import Split from '../../components/Split/Split.vue'
   import sixList from '../../components/sixList/sixList.vue'
+  import {reqHomeData} from '../../api/index'
+  import{mapState} from 'vuex'
   export default {
     /* 首页 */
     data () {
@@ -226,6 +137,19 @@
         newIndex: 0,
         navListData: ['推荐','居家生活','服饰鞋包','美食酒水','个护清洁','母婴亲子','运动旅行','数码家电','全球特色']// 导航的数据
       }
+    },
+    computed:{
+      ...mapState(['homeData']),
+      personalTailorList () {
+        let result = []
+        for (let i = 0; i<4; i++) {
+          let start = i * 3
+          let end = start + 3
+          result.push(this.homeData.personalShop.slice(start,end))
+        }
+        return result
+      },
+      
     },
     methods:{
       toPersonal(){
@@ -394,17 +318,23 @@
       align-items center
       font-size 28px
   /* 中间十张图 */
-    .minSwiper-list
-      display flex
-      justify-content space-between
-      a
-        text-decoration none
-      img
-        height 128px
-        width 128px
-      .text
-        color #333
-        text-align center
+    .categoryList
+      margin-bottom 40px
+      ul
+        width 100%
+        height 332px
+        li
+          width 150px
+          float left
+          display flex
+          flex-direction column
+          text-align center
+          padding 15px 20px 0 20px
+          box-sizing border-box
+          img
+            height 110px
+            width 110px
+            display block
   /* 广告 */
     .selection
       img
@@ -438,7 +368,37 @@
             height 150px
 
    /* 私人定制轮播 */
-    .private
+    .personalTailor
+      overflow hidden
+      margin-bottom 30px
+      h3
+        height 100px
+        line-height 100px
+        font-size 32px
+        padding-left 30px
+      .swiper-container
+        height 380px
+        ul
+          width 3000px
+          height 311px
+          display flex
+        li
+          width 750px
+          display flex
+          div
+            display flex
+            flex-direction column
+            margin-left 20px
+            span
+              width 210px
+              i
+                color $main
+            img
+              background-color #f5f5f5
+              height 216px
+              width 216px
+              margin-bottom 12px
+    /* .private
       height 470px
       width 100%
       //background-color pink
@@ -462,7 +422,7 @@
             background #f5f5f5
           p
             padding-top 10px
-            text-align center
+            text-align center */
   /* 六个图 */
     .sixListWrap
       h3

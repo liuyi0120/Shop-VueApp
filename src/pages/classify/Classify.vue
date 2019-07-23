@@ -6,60 +6,23 @@
       <span class="input">搜索商品,共~~~~~款好物</span>
     </section>
 
-    <div class="classify-list" >
+    <div class="classify-list">
         <!-- 左测 -->
-      <div class="classify-left">
+      <div class="classify-left" v-if="category.categoryL1List">
         <ul>
-          <li>夏凉专区</li>
-          <li>夏凉专区</li>
-          <li>夏凉专区</li>
-          <li>夏凉专区</li>
-          <li>夏凉专区</li>
-          <li>夏凉专区</li>
-          <li>夏凉专区</li>
-          <li>夏凉专区</li>
+          <li v-for="(category,index) in category.categoryL1List" :key="category.id"
+          @click="getIndex(index)" :class="thisIndex===index?'active':''">{{category.name}}</li>
         </ul>
       </div>
       <!-- 右侧 -->
+
       <div class="classify-right">
-        <div>
-          <img src="https://yanxuan.nosdn.127.net/cb225335d4a438564040f00b448e8db8.png?imageView&thumbnail=0x196" alt="">
-          <ul>
-            <li>
-              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-              <div>
-                <span class="now">员工精选好货</span>
-              </div>
-            </li>
-            <li>
-              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-              <div>
-                <span class="now">员工精选好货</span>
-              </div>
-            </li>
-            <li>
-              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-              <div>
-                <span class="now">员工精选好货</span>
-              </div>
-            </li>
-            <li>
-              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-              <div>
-                <span class="now">员工精选好货</span>
-              </div>
-            </li>
-            <li>
-              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-              <div>
-                <span class="now">员工精选好货</span>
-              </div>
-            </li>
-            <li>
-              <img src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-              <div>
-                <span class="now">员工精选好货</span>
-              </div>
+        <div v-if="category.categoryL1List">
+          <img :src="category.categoryL1List[thisIndex].wapBannerUrl" alt="">
+          <ul class="qwer">
+            <li v-for="(item) in category.categoryL1List[thisIndex].subCateList" :key="item.id">
+              <img :src="item.wapBannerUrl" alt="">
+              <span class="now">{{item.name}}</span>
             </li>
           </ul>
         </div>
@@ -71,12 +34,40 @@
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
+  import {mapState}from 'vuex'
   export default {
     /* 分类 */
+    data () {
+      return {
+        thisIndex:0
+      }
+     },
+    mounted () {
+      //左侧导航滑动
+      this.$store.dispatch('getcategoryList', () => {
+        this.$nextTick(() => {
+          new BScroll('.classify-left',{
+            click: true
+          })
+          new BScroll('.classify-right')
+        })
+      })
+    },
     methods:{
+      getIndex(index){
+        this.thisIndex = index
+      },
       toSearch(){
         this.$router.push('/search')
       }
+    },
+    mounted(){
+      this.$store.dispatch('getcategory')
+      this.$store.dispatch('getcategoryList')
+    },
+    computed:{
+      ...mapState(['category']),
+      //...mapState(['categoryList'])
     }
   }
 
@@ -133,12 +124,19 @@
             text-align center
             font-size 30px
             margin-top 40px
+            &:first-child
+              margin-top 0
+          .active
+            border-left 6px solid #b4282d
+            color #b4282d
             /* 右侧 */
       .classify-right
         width 588px
         height 1140px
         padding 0px 30px 100px 30px
-
+        img
+          width 528px
+          height 192px
         ul
           display flex
           flex-wrap wrap

@@ -60,8 +60,13 @@
 </template>
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
+  import { mapState } from 'vuex'
 
   export default {
+    computed:{
+      ...mapState(['categoryList']),
+
+    },
     methods:{
       toHome(){
         this.$router.push('/home')
@@ -79,6 +84,9 @@
         scrollX: true,
         click: true
       })
+
+      this.$store.dispatch('getcategoryList')
+
     }
   }
 </script>

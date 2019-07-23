@@ -28,11 +28,16 @@
 <script>
   import {mapState} from 'vuex'
   export default {
+    data () {
+      return {
+
+      }
+     },
     methods:{
       backHistory(){
         this.$router.go(0)
       }
-    }
+    },
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>

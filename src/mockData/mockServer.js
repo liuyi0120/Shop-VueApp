@@ -18,3 +18,4 @@ Mock.mock( '/categoryList', {
   code: 0,
   data: categoryListData
 });
+console.log('mock启动了,,,,')
