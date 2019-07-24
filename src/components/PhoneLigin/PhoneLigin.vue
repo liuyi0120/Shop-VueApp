@@ -3,15 +3,16 @@
     <div class="top_login">
 
       <label class="input_phone">
-        <input type="text" placeholder="请输入手机号" />
-        <div class="clear">x</div>
+        <input type="text" placeholder="请输入手机号" v-model="phone" @blur="testPhoneAndCode"/>
+        <div class="clear" @click="handelClear" v-if="phone">x</div>
       </label>
       <label class="input_code">
-        <input type="text" placeholder="请输入手机验证码" />
-        <div class="get_phone_code">获取验证码</div>
+        <input type="text" placeholder="请输入手机验证码" v-model="code" @blur="testPhoneAndCode"/>
+        <div class="get_phone_code" >获取验证码</div>
       </label>
       <div class="login_help">
-        <span class="err"></span>
+       <!--  <span class="err"></span> -->
+        <span class="err" v-show="errPhone || errCode">{{errPhone+'&nbsp;&nbsp;'+errCode}}</span>
         <span class="left">遇到问题? </span>
         <span class="right">使用密码验证登录</span>
       </div>
@@ -30,15 +31,39 @@
   export default {
     data () {
       return {
-
+        phone: '',
+        code: '',
+        errPhone: '',
+        errCode: ''
       }
-     },
+    },
+
     methods:{
+      /* 验证手机号 */
+      testPhoneAndCode () {
+        if (!/^1[34578]\d{9}$/.test(this.phone.trim()) && this.phone) {
+          this.errPhone = '手机号格式错误'
+        } else {
+          this.errPhone = ''
+        }
+        if (!/^\d{6}$/.test(this.code.trim()) && this.code) {
+          this.errCode = '验证码格式错误'
+        }else {
+          this.errCode = ''
+        }
+      },
+      /* 手机后x */
+      handelClear () {
+        this.phone = ''
+        this.testPhone()
+      },
+      /* 返回上一页 */
       backHistory(){
         this.$router.go(0)
       }
-    },
+    }
   }
+
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   #loginPhoneWrap

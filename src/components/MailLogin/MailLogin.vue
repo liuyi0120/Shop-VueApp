@@ -3,13 +3,13 @@
     <div class="top_login">
 
       <label class="input_phone">
-        <input type="text" placeholder="邮箱账号" />
+        <input type="text" placeholder="邮箱账号" v-model="mail" @blur="testMail"/>
       </label>
       <label class="input_code">
-        <input type="text" placeholder="密码" />
+        <input type="text" placeholder="密码" v-model="pwd"/>
       </label>
       <div class="login_help">
-        <div class="err"></div>
+        <div class="err" v-show="err">{{err}}</div>
         <span>注册账号</span>
         <span class="right">忘记密码</span>
       </div>
@@ -24,7 +24,23 @@
 </template>
 <script>
   export default {
+    data () {
+      return {
+        mail: '',
+        pwd: '',
+        err: ''
+      }
+     },
     methods:{
+      // 邮箱前台验证
+      testMail () {
+        if (!/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/.test(this.mail)&&this.mail) {
+          this.err = '邮箱格式错误'
+        } else {
+          this.err = ''
+        }
+      },
+      /* 回退上一页 */
       backHistory(){
         this.$router.go(0)
       }

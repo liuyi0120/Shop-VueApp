@@ -4,8 +4,8 @@ import {
   RESICE_HOMEDATA,
   RESICE_CATEGORY,
   RESICE_CATEGORYLIST,
-  RESICE_THINGSNAV,
-  RESICE_THINGSDATA
+  RECEIVE_THINGSNAV,
+  RECEIVE_THINGSDATA
 } from './mutation-types'
 export default{
   [CHANGE_STATE] ( state){
@@ -25,5 +25,11 @@ export default{
   [RESICE_CATEGORYLIST] (state,categoryList) {
     state.categoryList = categoryList
 
+  },
+  [RECEIVE_THINGSNAV] (state,data) {
+    state.thingsNav = data
+  },
+  [RECEIVE_THINGSDATA] (state,data) {
+    state.thingsData = data
   }
 }

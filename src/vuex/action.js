@@ -4,10 +4,10 @@ import {
   RESICE_HOMEDATA,
   RESICE_CATEGORY,
   RESICE_CATEGORYLIST,
-  RESICE_THINGSNAV,
-  RESICE_THINGSDATA
+  RECEIVE_THINGSNAV,
+  RECEIVE_THINGSDATA
 } from './mutation-types'
-import { reqHomeData, reqCategory, reqCategoryList } from '../api/index'
+import { reqHomeData, reqCategory, reqCategoryList,reqThingsNav,reqThingsData } from '../api/index'
 export default {
 
   phoneLoginaction({ commit }) {
@@ -34,4 +34,17 @@ export default {
       commit(RESICE_CATEGORYLIST, result.data)
     }
   },
+
+    async getThingsNav ({commit}) {
+      const result = await reqThingsNav()
+      if (result.code*1 === 200) {
+        commit(RECEIVE_THINGSNAV,result.data)
+      }
+    },
+  async reqThingsData({commit}) {
+    const result = await reqThingsData()
+    if (result.code*1 === 200) {
+      commit(RECEIVE_THINGSDATA,result.data)
+    }
+  }
 }

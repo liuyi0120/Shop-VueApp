@@ -5,4 +5,7 @@ export default {
   category:{},
   categoryList:[],
 
+  /* 第三页 */
+  thingsNav: [],
+  thingsData: []
 }
