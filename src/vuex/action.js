@@ -5,9 +5,10 @@ import {
   RESICE_CATEGORY,
   RESICE_CATEGORYLIST,
   RECEIVE_THINGSNAV,
-  RECEIVE_THINGSDATA
+  RECEIVE_THINGSDATA,
+  RECEIVE_SEARCHDATA
 } from './mutation-types'
-import { reqHomeData, reqCategory, reqCategoryList,reqThingsNav,reqThingsData } from '../api/index'
+import { reqHomeData, reqCategory, reqCategoryList,reqThingsNav,reqThingsData,reqSearchInitialData } from '../api/index'
 export default {
 
   phoneLoginaction({ commit }) {
@@ -46,5 +47,13 @@ export default {
     if (result.code*1 === 200) {
       commit(RECEIVE_THINGSDATA,result.data)
     }
-  }
+  },
+
+  async getSearchInitialData ({commit}) {
+      const result = await reqSearchInitialData()
+      if (result.code*1 === 200) {
+        commit(RECEIVE_SEARCHDATA,result.data)
+      }
+    }
+
 }

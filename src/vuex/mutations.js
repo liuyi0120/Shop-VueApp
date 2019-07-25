@@ -5,7 +5,8 @@ import {
   RESICE_CATEGORY,
   RESICE_CATEGORYLIST,
   RECEIVE_THINGSNAV,
-  RECEIVE_THINGSDATA
+  RECEIVE_THINGSDATA,
+  RECEIVE_SEARCHDATA
 } from './mutation-types'
 export default{
   [CHANGE_STATE] ( state){
@@ -31,5 +32,8 @@ export default{
   },
   [RECEIVE_THINGSDATA] (state,data) {
     state.thingsData = data
+  },
+  [RECEIVE_SEARCHDATA] (state,data) {
+    state.searchData = data
   }
 }

@@ -23,8 +23,16 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex';
   export default {
+    computed:{
+      ...mapState(['searchData'])
+    },
+    mounted(){
+      this.$store.dispatch('getSearchInitialData')
+    },
     methods:{
+      /* 返回上一页 */
       backHistory(){
         this.$router.go(-1)
       }

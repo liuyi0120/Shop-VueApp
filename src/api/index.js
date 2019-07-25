@@ -1,4 +1,5 @@
 import ajax from './ajax'
+/* 第一页 */
 export const reqHomeData = () => ajax('/homeData')
 export const reqCategory = () => ajax('/category')
 export const reqCategoryList = () => ajax('/categoryList')

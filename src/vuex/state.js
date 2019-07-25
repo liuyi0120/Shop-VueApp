@@ -7,5 +7,7 @@ export default {
 
   /* 第三页 */
   thingsNav: [],
-  thingsData: []
+  thingsData: [],
+  /* 搜索页 */
+  searchData:{}
 }

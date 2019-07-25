@@ -83,7 +83,7 @@ export default {
       this.$router.push("/search");
     }
   },
-  async mounted() {
+  mounted() {
     this.$store.dispatch('reqThingsData')
     this.$store.dispatch('getThingsNav')
 
