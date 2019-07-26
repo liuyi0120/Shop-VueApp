@@ -61,7 +61,7 @@
         </div>
       </div>
       <!-- 如果需要分页器 -->
-       <div class="swiper-pagination"></div>
+          <div class="swiper-pagination"></div>
     </div>
     <!-- 退货 -->
     <div class="g-back">
@@ -170,6 +170,7 @@
       var mySwiper = new Swiper ('.swiper-container', {
         //direction: 'vertical', // 垂直切换选项
         loop: true, // 循环模式选项
+        autoplay:true,
         // 如果需要分页器
         pagination: {
           el: '.swiper-pagination',

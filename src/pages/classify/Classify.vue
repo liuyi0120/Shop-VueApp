@@ -36,6 +36,7 @@
   import BScroll from 'better-scroll'
   import {mapState}from 'vuex'
   export default {
+    
     /* 分类 */
     data () {
       return {

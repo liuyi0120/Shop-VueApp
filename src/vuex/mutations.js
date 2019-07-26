@@ -37,3 +37,4 @@ export default{
     state.searchData = data
   }
 }
+  
